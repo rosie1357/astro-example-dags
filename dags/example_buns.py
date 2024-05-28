@@ -40,7 +40,7 @@ def myfirstdag():
 
     create_bunnies = extract()
     sum_ages = transform(create_bunnies)
-    load(sum_ages())
+    load(sum_ages)
 
 #Instantiate the DAG
 myfirstdag()
