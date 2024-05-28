@@ -13,7 +13,7 @@ from pendulum import datetime
 )
 def myfirstdag():
 
-    @task()  # Define that this task updates the `current_astronauts` Dataset
+    @task
     def extract():
 
         data = {'carlos': 3, 'dots': 6, 'lulu': 2, 'gigi': 2}
