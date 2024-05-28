@@ -1,13 +1,15 @@
 from airflow.decorators import task, dag
 import json
+from pendulum import datetime
+
 
 @dag(
     start_date=datetime(2024, 1, 1),
     schedule="@daily",
     catchup=False,
     doc_md=__doc__,
-    default_args={"owner": "Astro", "retries": 3},
-    tags=["example"],
+    default_args={"owner": "Rosie", "retries": 3},
+    tags=["gigi"],
 )
 
 def myfirstdag():
@@ -40,7 +42,7 @@ def myfirstdag():
     
     create_bunnies = extract()
     sum_ages = transform(create_bunnies)
-    load(sum_ages['total_age'])
+    load(sum_ages())
 
 myfirstdag()
 
