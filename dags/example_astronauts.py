@@ -32,7 +32,7 @@ import requests
     catchup=False,
     doc_md=__doc__,
     default_args={"owner": "Astro", "retries": 3},
-    tags=["example"],
+    tags=["kermit"],
 )
 def example_astronauts():
     #Define tasks
