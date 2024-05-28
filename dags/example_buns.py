@@ -13,7 +13,7 @@ from pendulum import datetime
 )
 def myfirstdag():
 
-    @task
+    @task() 
     def extract():
 
         data = {'carlos': 3, 'dots': 6, 'lulu': 2, 'gigi': 2}
@@ -23,7 +23,7 @@ def myfirstdag():
         
         return data_dict
 
-    @task
+    @task()
     def transform(data_dict):
         
         total_age = 0
@@ -33,7 +33,7 @@ def myfirstdag():
 
         return total_age
 
-    @task
+    @task()
     def load(total_age):
 
         print(total_age)
