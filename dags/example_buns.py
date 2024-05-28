@@ -1,5 +1,4 @@
 from airflow.decorators import task, dag
-import json
 from pendulum import datetime
 from airflow.operators.python import get_current_context
 
@@ -17,12 +16,9 @@ def myfirstdag():
     @task() 
     def extract():
 
-        data = '{"carlos": 3, "dots": 6, "lulu": 2, "gigi": 2}'
-
-        data_dict = json.loads(data)
-        print(data_dict)
+        data = {"carlos": 3, "dots": 6, "lulu": 2, "gigi": 2}
         
-        return data_dict
+        return data
 
     @task()
     def transform(data_dict):
