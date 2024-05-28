@@ -16,7 +16,7 @@ def myfirstdag():
     @task() 
     def extract():
 
-        data = {'carlos': 3, 'dots': 6, 'lulu': 2, 'gigi': 2}
+        data = "{'carlos': 3, 'dots': 6, 'lulu': 2, 'gigi': 2}"
 
         data_dict = json.loads(data)
         print(data_dict)
