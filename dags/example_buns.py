@@ -1,6 +1,7 @@
 from airflow.decorators import task, dag
 import json
 from pendulum import datetime
+from airflow.operators.python import get_current_context
 
 #Define the basic parameters of the DAG, like schedule and start_date
 @dag(
@@ -35,6 +36,9 @@ def myfirstdag():
 
     @task()
     def load(total_age):
+
+        for k, v in get_current_context().items():
+            print(f"{k}: {v}")
 
         print(total_age)
 
